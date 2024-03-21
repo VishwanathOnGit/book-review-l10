@@ -3,8 +3,6 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Inspiring;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
@@ -51,7 +49,9 @@ class Test extends Mailable
     public function attachments(): array
     {
         return [
-            Attachment::fromStorage('PHP-8.pdf')
+            Attachment::fromStorage('profile-img.jpg')
+                ->as('Vishwanath.jpg')
+                ->withMime('image/jpeg')
         ];
     }
 }
