@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Mail\OrderShipped;
 use App\Mail\Test;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     Mail::send(new Test());
+    // Mail::send(new OrderShipped());
     return view('welcome');
 });
 
